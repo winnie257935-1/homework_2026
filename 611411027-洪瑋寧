@@ -1,0 +1,27 @@
+姓名：洪瑋寧
+學號：611411027
+執行方式：python 611411027BMI.py
+需求：Python 3，無需安裝第三方套件。
+本檔名依作業規定使用「學號BMI.py」格式。
+"""
+
+
+def main():
+    try:
+        height_cm = float(input("請輸入身高（公分）：").strip())
+        weight_kg = float(input("請輸入體重（公斤）：").strip())
+    except ValueError:
+        print("輸入錯誤：身高和體重請輸入數字。")
+        return
+
+    if height_cm <= 0 or weight_kg <= 0:
+        print("輸入錯誤：身高和體重必須大於 0。")
+        return
+
+    height_m = height_cm / 100
+    bmi = weight_kg / (height_m ** 2)
+    print(f"您的 BMI 為：{bmi:.2f}")
+
+
+if __name__ == "__main__":
+    main()
